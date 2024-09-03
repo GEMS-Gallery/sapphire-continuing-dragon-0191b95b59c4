@@ -1,0 +1,13 @@
+type Page = 
+ record {
+   content: text;
+   id: nat;
+   title: text;
+ };
+service : {
+  createPage: (text) -> (nat);
+  deletePage: (nat) -> (bool);
+  getPage: (nat) -> (opt Page) query;
+  getPages: () -> (vec Page) query;
+  updatePage: (nat, text, text) -> (bool);
+}
